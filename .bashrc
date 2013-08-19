@@ -162,7 +162,8 @@ shopt -s histappend
 
 # Make prompt informative
 # See:  http://www.ukuug.org/events/linux2003/papers/bash_tips/
-PS1="\[\033[0;34m\][\u@\h:\w]$\[\033[0m\]"
+# Evitar que directorios largos obscurescan la línea de instrucciones.
+PS1="\[\033[0;34m\][\u@\h:\W]$\[\033[0m\] "
 
 ## -----------------------
 ## -- 2) Set up aliases --
@@ -201,8 +202,10 @@ export GREP_COLOR='1;31' # green for matches
 # 2.5) sort options
 # Ensures cross-platform sorting behavior of GNU sort.
 # http://www.gnu.org/software/coreutils/faq/coreutils-faq.html#Sort-does-not-sort-in-normal-order_0021
-unset LANG
-export LC_ALL=POSIX
+# Estas dos al parecer no permiten los acentos.
+# ¿Qué prefieres, acentos u orden? Recordar el unset antes de ordenar:
+#unset LANG
+#export LC_ALL=POSIX
 
 # 2.6) Install rlwrap if not present
 # http://stackoverflow.com/a/677212
