@@ -1,3 +1,5 @@
 [user]
-	name = Octavio Orozco
 	email = octavio.orozco2@gmail.com
+	name = octavio-orozco2
+[credential]
+        helper = cache
